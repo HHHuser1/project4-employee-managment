@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Management System</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cherry+Bomb+One&family=Comic+Neue:ital,wght@0,300;0,400;0,700;1,300;1,400&family=Inter+Tight:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Oswald:wght@200;300;400;500;600;700&family=Permanent+Marker&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Tektur:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+
+    <link type="image/png" sizes="16x16" rel="icon" href="../employee_db_v3/icons8-database-kmg-design-outline-color-16.png">
+    <link type="image/png" sizes="32x32" rel="icon" href="../employee_db_v3/icons8-database-kmg-design-outline-color-32.png">
+    <link type="image/png" sizes="96x96" rel="icon" href="../employee_db_v3/icons8-database-kmg-design-outline-color-96.png">
+
+    <link rel="stylesheet" href="./css/employee_management_style.css">
+</head>
+<body>
+
+    <section class="container">
+        <div class="textbox">
+            <h1>Employee Management System</h1>
+            
+        </div>     
+    
+        <!-- <div class="wrapper"> -->
+        <!-- <div id="errorContainer">Adding employee errors will display here</div> -->
+
+            <div id="employee-add">
+                <div id="errorContainer"></div>
+                <h3>Add Employee: <br><span class="span_class">(an error will display if "employee ID" or "email" exists in the database)</h3></span>
+                <form id="addEmployeeForm"> <!-- document.getElementById("addEmployeeForm").reset(); -->
+                    <div>
+                        <label for="first_name">First Name:</label>
+                        <input type="text" id="first_name" placeholder="First Name" required><br>
+                    </div>
+
+                    <div>
+                        <label for="last_name">Last Name:</label>
+                        <input type="text" id="last_name" placeholder="Last Name" required><br>
+                    </div>
+
+                    <div>
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" placeholder="Email" required><br>
+                    </div>
+
+                    <div>
+                        <label for="employee_id">Employee ID: (4-digit format)</label>
+                        <input type="text" id="employee_id" pattern="[0-9]{4}" placeholder="4-digit format" required><br>
+                    </div>
+
+                    <div>
+                        <label for="department_name">Select a department</label>
+                        <select name="department_name" id="department_name"> 
+                            <option value="finance">Finance</option> 
+                            <option value="marketing">Marketing</option> 
+                            <option value="production">Production</option> 
+                            <option value="human resources">Human Resources</option>
+                            <option value="management">Management</option>
+                            <option value="accounting">Accounting</option>
+                            <option value="sales">Sales</option>
+                            <option value="maintenance">Maintenance</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <input class="btn" type="submit" value="Add Employee" id="addEmployee">
+                        <!-- <button><a id="addEmployee">Add Employee</a></button> -->
+                    </div>
+                </form>
+            </div>
+
+        <!-- </div> -->
+    </section>
+
+    <section class="container">
+        <div id="employee_search">
+            <h2>Search Employees:</h2>
+            <div id="searchForm"> <!-- document.getElementById("searchForm").reset(); -->
+                <label for="search_name">Search by First Name, Last Name or Department</label>
+                <input type="text" id="search_name" required>
+                <input class="btn" type="submit" value="Search" id="searchEmployee">
+                <!-- <button id="searchEmployee">Search</button> -->
+            </div>
+        </div>
+    </section>
+
+    <section class="top">
+        <a class="btn1"  href="./edit-information.html">To Edit Employee's  Information Click Here</a>
+    </section>
+
+    <section class="container1">
+        <h2>Employee List:</h2>
+        <ul id="employeeList">
+            <!-- Employee list results will be displayed here -->
+        </ul>
+    </section>
+
+    <script src="./js/add_employee.js" ></script>
+</body>
+</html>
+
+
+
+<!-- updating GIT repo to make sure it works -->
