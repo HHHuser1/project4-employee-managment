@@ -14,16 +14,16 @@ function displayError(errorMessage) {
 
 // Function to fetch employee data from the server
 function fetchEmployees() {
-  fetch("./app/employee_management.php", {
-      method: "POST",
-      body: JSON.stringify({ fetchEmployees: true }),
-      headers: {
-          "Content-Type": "application/json"
-      }
-  })
-  .then(response => response.json())
-  .then(data => displayData(data))
-  .catch(error => console.error(error));
+    fetch("./app/employee_management.php", {
+        method: "POST",
+        body: JSON.stringify({ fetchEmployees: true }),
+        headers: {
+            "Content-Type": "application/json"
+        }
+    })
+    .then(response => response.json())
+    .then(data => displayData(data))
+    .catch(error => console.error(error));
 }
 
 

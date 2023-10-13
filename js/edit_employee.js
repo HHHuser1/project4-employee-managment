@@ -13,25 +13,26 @@ function fetchEmployees() {
 }
 
 
+///////////    no longer need to display data on page since we have a table
+// // Function to display employee data on the web page
+// function displayData(data) {
+//     const employeeList = document.getElementById("employeeList");
+//     employeeList.innerHTML = '';
 
-// Function to display employee data on the web page
-function displayData(data) {
-    const employeeList = document.getElementById("employeeList");
-    employeeList.innerHTML = '';
-
-    const ul = document.createElement('ul');
+//     const ul = document.createElement('ul');
     
-    data.forEach((employee) => {
-        const li = document.createElement('li');
-        li.innerHTML = `EmployeeID: ${employee.employee_id}, Name: ${employee.first_name} ${employee.last_name}, Email: ${employee.email}, Department: ${employee.department_name}`;
-        ul.appendChild(li);
-    })
+//     data.forEach((employee) => {
+//         const li = document.createElement('li');
+//         li.innerHTML = `EmployeeID: ${employee.employee_id}, Name: ${employee.first_name} ${employee.last_name}, Email: ${employee.email}, Department: ${employee.department_name}`;
+//         ul.appendChild(li);
+//     })
 
-    employeeList.appendChild(ul);
-}
+//     employeeList.appendChild(ul);
+// }
 
-// Call the function to fetch employee data when the page loads
-fetchEmployees();
+// // Call the function to fetch employee data when the page loads
+// fetchEmployees();
+//////////////
 
     // Function to display error messages on the page
     function displayError2(errorMessage) {
