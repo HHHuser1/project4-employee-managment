@@ -36,7 +36,12 @@ fetchEmployees();
     // Function to display error messages on the page
     function displayError2(errorMessage) {
         const errorContainer = document.getElementById("errorContainer2");
-        errorContainer.innerHTML = `<p style="color: red;">Error: ${errorMessage}</p>`;
+        // errorContainer.innerHTML = `<p style="color: red;">Error: ${errorMessage}</p>`;
+        if (errorMessage) {
+          errorContainer.innerHTML = `<p style="color: red; font-weight: bold; background-color: #ff5">Error: ${errorMessage}</p>`;
+        } else {
+          errorContainer.innerHTML = ''; // Clear the error message
+        }
     }
 
 
