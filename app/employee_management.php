@@ -315,12 +315,12 @@ if ($_SERVER["CONTENT_TYPE"] === "application/json") {
         $query = "SELECT employees.first_name, employees.last_name, employees.email, employees.employee_id, departments.department_name
         FROM employees
         LEFT JOIN departments ON employees.departmentID = departments.departmentID
-        WHERE employees.first_name LIKE ? OR employees.last_name LIKE ? OR departments.department_name LIKE ?
+        WHERE employees.first_name LIKE ? OR employees.last_name LIKE ? OR employees.email LIKE ? OR employees.employee_id LIKE ? OR departments.department_name LIKE ?
         ORDER BY employees.timestamp DESC";
 
         $stmt = mysqli_prepare($link, $query);
         $search_name = "%$search_name%"; // Add wildcards for the search
-        mysqli_stmt_bind_param($stmt, "sss", $search_name, $search_name, $search_name);
+        mysqli_stmt_bind_param($stmt, "sssss", $search_name, $search_name, $search_name, $search_name, $search_name);
         mysqli_stmt_execute($stmt);
         $search_result = mysqli_stmt_get_result($stmt);
 
